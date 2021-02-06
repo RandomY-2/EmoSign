@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+row-header {
+    margin: 0px;
+    padding: 0px;
+}
+
+.row-content {
+    margin: 0px auto;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px ridge;
+    min-height: 400px;
+}
+
+/* ///////////////////////////// Welcome Page /////////////////////////////// */
+.welcome-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.welcomeContainer {
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 50px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.welcomeContainer .welcome-Info {
+    width: 100%;
+    text-align: center;
+}
+
+.welcomeContainer .welcome-Info .welcome-Info-Heading {
+    font-size: 5rem;
+    font-weight: 500;
+    color: white;
+}
+
+.welcomeContainer .welcome-Info .welcome-Info-Subheading {
+    font-size: 2rem;
+    font-weight: 200;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.welcomeContainer .welcome-Info .welcome-Info-Button {
+    margin-top: 30px;
+    padding: 2rem 5rem;
+    display: inline-block;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: whitesmoke;
+    text-decoration: none;
+    background-color: black;
+    align-items: center;
+}
+
+.arrow-down {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.arrow-down::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-right: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-animation: 3s arrow infinite ease;
+    animation: 3s arrow infinite ease;
+}
+
+@-webkit-keyframes arrow {
+    0%, 100% {
+        top: 80%;
+    }
+
+    50% {
+        top: 80%;
+    }
+}
+
+@keyframes arrow {
+    0%, 100% {
+        top: 80%;
+    }
+    50% {
+        top: 80%;
+    }
+}
