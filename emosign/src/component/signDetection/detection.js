@@ -3,7 +3,7 @@ import Webcam from 'react-webcam';
 import * as tf from '@tensorflow/tfjs';
 import * as use from '@tensorflow-models/universal-sentence-encoder';
 import { CLASS } from './HelperFunc/mapLabel';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Image } from 'react-bootstrap';
 
 import './detect.css';
 import posEmo from './img/positive-emoji.png';
@@ -33,10 +33,13 @@ function Detection() {
     const [text, setText] = useState([]);
     const [emo_model, setModel] = useState(null);
     const [emotion, setEmotion] = useState('');
+    const [loaded, setLoaded] = useState(false);
 
     const loadModel = async () => {
         const sign_model = await tf.loadLayersModel('https://cloud-object-storage-7g-cos-standard-40b.s3.us-east.cloud-object-storage.appdomain.cloud/model.json');
         const sentence_model = await use.load();
+
+        setLoaded(true);
         setModel(sentence_model);
 
         setInterval(() => {
@@ -119,6 +122,15 @@ function Detection() {
     
     return (
         <div className='cam-background'>
+            {!loaded ? 
+            <Container>
+                <Row>
+                    <Col>
+                        <h1>Loading Model...</h1>
+                    </Col>
+                </Row>
+            </Container> :
+            
             <Container>
                 <Row>
                     <Col>
@@ -138,8 +150,8 @@ function Detection() {
                 <Row>
                     <Col>
                         {emotion === '' ? <div></div> : 
-                         emotion === 'positive' ? <img src={posEmo} /> : 
-                                                  <img src={neuEmo} />}
+                         emotion === 'positive' ? <Image src={posEmo} /> : 
+                                                  <Image src={neuEmo} />}
                     </Col>
                 </Row>
 
@@ -175,6 +187,7 @@ function Detection() {
                         }}
                 />      
             </Container>
+            }
         </div>
     )
 }

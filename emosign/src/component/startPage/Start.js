@@ -9,7 +9,7 @@ const Start = () => {
         <div id="welcomeSection" className="welcomeContainer welcome-container">
             <div className="welcome-Info">
                 <h1 className="welcome-Info-Heading">Welcome to EmoSign</h1>
-                <p className="welcome-Info-Subheading">where you can detect and translate common sign language phrases using deep learning</p>
+                <p className="welcome-Info-Subheading">where you can translate ASL alphabets using deep learning</p>
                 <Row>
                     <Col>
                         <Link to='/detection' type="button" className="welcome-Info-Button">Start Detection</Link>
