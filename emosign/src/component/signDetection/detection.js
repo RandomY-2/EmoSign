@@ -30,7 +30,7 @@ const sentences = [
 function Detection() {
     const webcamRef = useRef(null);
     const canvasRef = useRef(null);
-    const [text, setText] = useState(['I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'H', 'I', 'S']);
+    const [text, setText] = useState([]);
     const [emo_model, setModel] = useState(null);
     const [emotion, setEmotion] = useState('');
     const [loaded, setLoaded] = useState(false);
