@@ -10,27 +10,27 @@ import posEmo from './img/positive-emoji.png';
 import neuEmo from './img/neutral-emoji.png';
 
 const positive = [
-    'HOW ARE YOU?', 'THANK YOU SO MUCH', 'TODAY IS A NICE DAY',
-    'I LIKE PLAYING TENNIS', 'I LIKE YOUR PHONE', 'HAHAHA'
+    'H,O,W, ,A,R,E, ,Y,O,U,', 'T,H,A,N,K, ,Y,O,U, ,S,O, ,M,U,C,H,', 'T,O,D,A,Y, ,I,S, ,A, ,N,I,C,E, ,D,A,Y,',
+    'I, ,L,I,K,E, ,P,L,A,Y,I,N,G, ,T,E,N,N,I,S,', 'I, ,L,I,K,E, ,Y,O,U,R, ,P,H,O,N,E,', 'H,A,H,A,H,A,'
 ];
 
 const negative = [
-    'SAD', 'UNHAPPY', 'DEPREESSED', 'ANGRY', 'NO', 'HATE'
+    'S,A,D,', 'U,N,H,A,P,P,Y,', 'D,E,P,R,E,E,S,S,E,D,', 'A,N,G,R,Y,', 'N,O,', 'H,A,T,E,'
 ]
 
 const sentences = [
     // positive
-    'HOW ARE YOU?', 'THANK YOU SO MUCH', 'TODAY IS A NICE DAY',
-    'I LIKE PLAYING TENNIS', 'I LIKE YOUR PHONE', 'HAHAHA',
+    'H,O,W, ,A,R,E, ,Y,O,U,', 'T,H,A,N,K, ,Y,O,U, ,S,O, ,M,U,C,H,', 'T,O,D,A,Y, ,I,S, ,A, ,N,I,C,E, ,D,A,Y,',
+    'I, ,L,I,K,E, ,P,L,A,Y,I,N,G, ,T,E,N,N,I,S,', 'I, ,L,I,K,E, ,Y,O,U,R, ,P,H,O,N,E,', 'H,A,H,A,H,A,',
 
     // negative
-    'SAD', 'UNHAPPY', 'DEPREESSED', 'ANGRY', 'NO', 'HATE'
+    'S,A,D,', 'U,N,H,A,P,P,Y,', 'D,E,P,R,E,E,S,S,E,D,', 'A,N,G,R,Y,', 'N,O,', 'H,A,T,E,'
 ];
 
 function Detection() {
     const webcamRef = useRef(null);
     const canvasRef = useRef(null);
-    const [text, setText] = useState([]);
+    const [text, setText] = useState(['I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'H', 'I', 'S']);
     const [emo_model, setModel] = useState(null);
     const [emotion, setEmotion] = useState('');
     const [loaded, setLoaded] = useState(false);
@@ -66,10 +66,7 @@ function Detection() {
     
         sentences.pop();
 
-        if (score < 0.4) {
-            console.log('neutral');
-            setEmotion('neutral');
-        } else if (positive.includes(sentences[index])) {
+        if (positive.includes(sentences[index])) {
             console.log('positive'); 
             setEmotion('positive');
         } else {
