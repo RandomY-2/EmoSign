@@ -30,7 +30,7 @@ const sentences = [
 function Detection() {
     const webcamRef = useRef(null);
     const canvasRef = useRef(null);
-    const [text, setText] = useState([]);
+    const [text, setText] = useState(['N', 'O']);
     const [emo_model, setModel] = useState(null);
     const [emotion, setEmotion] = useState('');
     const [loaded, setLoaded] = useState(false);
@@ -65,8 +65,11 @@ function Detection() {
         }
     
         sentences.pop();
-
-        if (positive.includes(sentences[index])) {
+        
+        if (score < 0.4) {
+            console.log('neutral');
+            setEmotion('neutral');
+        } else if (positive.includes(sentences[index])) {
             console.log('positive'); 
             setEmotion('positive');
         } else {
