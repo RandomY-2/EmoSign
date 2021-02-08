@@ -51,7 +51,9 @@ First of all, the sign detection is still not very accuracy. Partly, it is becau
 A in ASL Alphabet:
 ![A](https://github.com/RandomY-2/EmoSign/blob/main/sample_images/A.png)
 
+
 S in ASL Alphabet:
+
 ![S](https://github.com/RandomY-2/EmoSign/blob/main/sample_images/S.jpg)
 
 and partly it is because the kaggle dataset is not very generalized. All images were taken by one person in one setting under one lighting condition. So the model may overfit to that particular environment. But I wasn't able to find another dataset and due to time constraint I couldn't create one myself. So we should find a way to increase the performance of the detection model. 
