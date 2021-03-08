@@ -1,5 +1,8 @@
 # EmoSign
 
+## Honor
+**Best Web Hack** from UCLA Hack Off the Hill Hackathon
+
 ## Inspiration
 I gained this inspiration after seeing documentaries on the difficulty of deaf people, and I want to create a project to help them better express their ideas - both their text and their feelings - to others, even to those who are not familiar with the sign language. 
 
